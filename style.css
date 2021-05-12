@@ -1,5 +1,20 @@
+:root {
+    --softCyan: hsl(174, 77%, 80%);
+    --strongCyan: hsl(174, 86%, 45%);
+    --grayRed: hsl(14, 92%, 95%);
+    --lightRed: hsl(15, 100%, 70%);
+    --paleBlue:  hsl(226, 100%, 87%);
+    --veryPaleBlue: hsl(230, 100%, 99%);
+    --lgrayBlue: hsl(224, 65%, 95%);
+    --lgrayishBlue: hsl(223, 50%, 87%);
+    --grayBlue: hsl(225, 20%, 60%);
+    --darkBlue: hsl(227, 35%, 25%);
+}
 
-
+body {
+    margin: 0;
+    padding: 0;
+}
 
 
 .attribution { 

@@ -14,7 +14,92 @@
 body {
     margin: 0;
     padding: 0;
+    background: var(--veryPaleBlue);
+    font-family: 'Manrope', sans-serif;
 }
+
+.bg {
+    position: relative;
+}
+
+.bg .circles {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heading {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-heading {
+    color: var(--darkBlue);
+    margin: 0;
+}
+
+.sub-heading {
+    color: var(--grayBlue);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.box {
+    width: 30%;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    box-shadow: 0 0 10px 0 var(--lgrayishBlue);
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+}
+
+.info p {
+    color: var(--grayBlue);
+    flex-grow: 1;
+}
+
+.info .price span {
+    color: var(--darkBlue);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.info .pageviews {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.info .price {
+    text-align: end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .attribution { 

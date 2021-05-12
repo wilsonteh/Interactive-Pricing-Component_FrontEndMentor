@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/code.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
 
-  <title>Interactive pricing component</title>
-
-
+    <title>Interactive pricing component</title>
 
 </head>
 
 <body>
 
-    <div class="heading">
-        <div class="main-heading">
-            Simple, traffic-based pricing
+    <div class="bg">
+        <img src="./images/bg-pattern.svg" alt="">
+        <img class="circles" src="./images/pattern-circles.svg" alt="">    
+
+        <div class="heading">
+            <h1 class="main-heading">Simple, traffic-based pricing</h1>
+
+            <p class="sub-heading">
+                Sign-up for our 30-day trial. No credit card required. 
+            </p>
         </div>
-    
-        <div class="sub-heading">
-            Sign-up for our 30-day trial. No credit card required. 
+
+        <div class="box">
+            <div class="info">
+                <p class="pageviews">100k Pageviews</p>
+                <p class="price"><span>$16.00</span> /month</p>
+            </div>
+
+            <input class="slider" type="range" name="" id="">
+
+            <label class="switch">
+                <input type="checkbox" name="" id="">
+                <span class="switch-slider"></span>
+            </label>
+            <!-- Monthly Billing -->
+            <!-- Yearly Billing 25% discount -->
+
+            <div class="description">
+                <ul>
+                    <li>Unlimited Websites</li>
+                    <li>100% data ownership</li>
+                    <li>Email reports</li>
+                </ul>    
+                <button class="cta">Start my trial</button>
+            </div>
         </div>
+
     </div>
 
-    <div class="box">
-        <div class="info">
-            Pageviews 
-            $ /month
-        </div>
-
-        <input class="slider" type="range" name="" id="">
-
-        <label class="switch">
-            <input type="checkbox" name="" id="">
-            <span class="switch-slider"></span>
-        </label>
-        <!-- Monthly Billing -->
-        <!-- Yearly Billing 25% discount -->
-
-        <div class="description">
-            <ul>
-                <li>Unlimited Websites</li>
-                <li>100% data ownership</li>
-                <li>Email reports</li>
-            </ul>    
-            <button class="cta">Start my trial</button>
-        </div>
-    </div>
-
-    
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="https://github.com/wilsonteh">Wilson Teh</a>.

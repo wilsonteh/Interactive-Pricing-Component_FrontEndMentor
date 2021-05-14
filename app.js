@@ -1,6 +1,8 @@
 let slider = document.getElementById('slider');
 let pageview = document.querySelector('.pageviews span');
 let price = document.querySelector('.price span'); 
+let checkbox = document.querySelector('.checkbox');
+
 
 // values for the slider to step on
 const stepValue = [10, 50, 100, 500, 1000]
@@ -40,12 +42,38 @@ function updatePrice(step) {
         pricing = 36
     }
 
-    price.innerHTML = `$${pricing}`
+    price.innerHTML = `${pricing}`
 }
 
+function discount(pricing) {
+    pricing *= 0.75
+    price.innerHTML = `${pricing}`
+}
+
+function undoDiscount(pricing) {
+    console.log(pricing)
+    pricing /= 0.75
+    price.innerHTML = `${pricing}`
+}
+
+function undoCheckbox(checkbox) {
+    checkbox.checked = false
+}
+
+function getPrice() {
+    return Number(price.textContent)
+}
 
 slider.addEventListener('input', function callbackParams() {
     updatePageView(this.value)    
     updatePrice(this.value)
-    console.log(this.value)
+    undoCheckbox(slider.nextElementSibling.children[1].children[0])
+})
+
+checkbox.addEventListener('change', function callbackParams() {
+    if (this.checked) {
+        discount(getPrice())
+    } else if (!this.checked) {
+        undoDiscount(getPrice())
+    }
 })

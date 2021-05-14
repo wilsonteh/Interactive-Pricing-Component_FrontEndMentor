@@ -9,6 +9,8 @@
     --lgrayishBlue: hsl(223, 50%, 87%);
     --grayBlue: hsl(225, 20%, 60%);
     --darkBlue: hsl(227, 35%, 25%);
+    --toggleWidth: 50px;
+    --toggleHeight: 25px;
 }
 
 body {
@@ -48,7 +50,7 @@ body {
 }
 
 .box {
-    width: 30%;
+    width: 33%;
     height: auto;
     background-color: white;
     position: absolute;
@@ -112,13 +114,91 @@ body {
     background-image: url('./images/icon-slider.svg');
     background-repeat: no-repeat;
     background-position: center;
-
 }
 
+.billing {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    transform: translateX(-5%);
+}
 
+.billing .text {
+    color: var(--grayBlue);
+    font-size: 0.9rem;
+}
 
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: var(--toggleWidth);
+    height: var(--toggleHeight);
+    /* align-self: center; */
+    margin: 0 1rem;
+}
 
+.toggle .checkbox {
+    opacity: 0;   
+    width: 0;
+    height: 0;
+}
 
+.round {
+    position: absolute;
+    cursor: pointer;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lgrayishBlue);
+    border-radius: 50px;
+}
+
+.round:hover {
+    background-color: var(--softCyan);
+}
+
+/* Round toggle button */
+.round::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(var(--toggleWidth)/2 - 4px);      /* subtract double the top & left px */
+    height: calc(var(--toggleHeight) - 4px); 
+    background-color: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+/* .checkbox:checked + .round {
+    background-color: ;
+} */
+
+.checkbox:checked + .round::before {
+    transform: translateX(calc(var(--toggleWidth) / 2));
+}
+
+.discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 20px;
+    color: var(--lightRed);
+    background-color: var(--grayRed);
+    border-radius: 40px;
+    font-size: 0.7rem;
+    margin-left: 10px;
+}
+
+hr {
+    background-color: var(--lgrayBlue);
+    border: none;
+    width: 100%;
+    height: 1.5px;
+}
 
 
 

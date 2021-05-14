@@ -2,15 +2,18 @@ let slider = document.getElementById('slider');
 let pageview = document.querySelector('.pageviews span');
 let price = document.querySelector('.price span'); 
 
+// values for the slider to step on
+const stepValue = [10, 50, 100, 500, 1000]
+
 // to implement callback with params
 function callbackParams(callback) {
     callback()
 }
 
-function updatePageView(views) {
+function updatePageView(step) {
     let unit
+    let views = stepValue[step]
 
-    // 10 is 10k bcs we remove the trailing zeros 
     if (views < 1000) {
         unit = 'k'
     } else {
@@ -21,8 +24,9 @@ function updatePageView(views) {
     pageview.innerHTML = `${views}${unit}`
 }
 
-function updatePrice(views) {
+function updatePrice(step) {
     let pricing
+    let views = stepValue[step]
 
     if (views <= 10) {
         pricing = 8
@@ -43,4 +47,5 @@ function updatePrice(views) {
 slider.addEventListener('input', function callbackParams() {
     updatePageView(this.value)    
     updatePrice(this.value)
+    console.log(this.value)
 })

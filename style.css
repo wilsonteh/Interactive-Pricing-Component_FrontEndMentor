@@ -24,6 +24,11 @@ body {
     position: relative;
 }
 
+.bg .main-bg {
+    width: 100%;
+    height: 50vh;
+}
+
 .bg .circles {
     position: absolute;
     top: 10%;
@@ -36,6 +41,8 @@ body {
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
 }
 
 .main-heading {
@@ -45,7 +52,6 @@ body {
 
 .sub-heading {
     color: var(--grayBlue);
-    text-align: center;
     margin: 10px 0;
 }
 
@@ -89,26 +95,26 @@ body {
     text-align: end;
 }
 
-#slider {
+.slider {
     -webkit-appearance: none;
     background-color: var(--lgrayBlue);
     border-radius: 20px;
 }
 
-#slider::-webkit-slider-runnable-track {
+.slider::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
     color: #13bba4;
     cursor: pointer;
 }
 
-#slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    background: var(--strongCyan);
+    background-color: var(--strongCyan);
     margin-top: -14px;
     box-shadow: 0 10px 15px 5px var(--softCyan);
     background-image: url('./images/icon-slider.svg');
@@ -118,10 +124,9 @@ body {
 
 .billing {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     margin: 3rem 0 1.5rem 0;
-    transform: translateX(-5%);
 }
 
 .billing .text {
@@ -134,7 +139,6 @@ body {
     display: inline-block;
     width: var(--toggleWidth);
     height: var(--toggleHeight);
-    /* align-self: center; */
     margin: 0 1rem;
 }
 
@@ -147,8 +151,8 @@ body {
 .round {
     position: absolute;
     cursor: pointer;
-    top: 0; 
-    left: 0;
+    top: 2px; 
+    left: 2px;
     width: 100%;
     height: 100%;
     background-color: var(--lgrayishBlue);
@@ -172,10 +176,6 @@ body {
     transition: .3s;
 }
 
-/* .checkbox:checked + .round {
-    background-color: ;
-} */
-
 .checkbox:checked + .round::before {
     transform: translateX(calc(var(--toggleWidth) / 2));
 }
@@ -184,13 +184,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
+    width: auto;
     height: 20px;
     color: var(--lightRed);
     background-color: var(--grayRed);
     border-radius: 40px;
     font-size: 0.7rem;
     margin-left: 10px;
+    padding: 0.5px 5px;
+}
+
+.discount span:nth-child(1) {
+    display: none;
 }
 
 hr {
@@ -209,12 +214,12 @@ hr {
     color: var(--grayBlue);
     font-size: 0.8rem;
     margin: 1.5rem 0 0 0;
+    
 }
 
 .description ul li {
     list-style-image: url('./images/icon-check.svg');
-    margin: 0.7rem 0 0 0; 
-    padding: 0 0 0 0.5rem;
+    margin: 0.7rem 0 0 0;
 }
 
 .description .btn {
@@ -234,6 +239,70 @@ hr {
     color: white;
 }
 
+@media screen and (max-width: 992px) {
+    .box {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        width: 70%;
+        top: 70%;
+    }
+    .discount span:nth-child(1) {
+        display: block;
+    }
+    .discount span:nth-child(2) {
+        display: none;
+    }
+    .description {
+        flex-direction: column;
+        align-items: center;
+    }
+    .description .btn {
+        align-self: center;
+        transform: translateY(30%);
+        margin: 1.5rem 0 0 0;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .heading {
+        top: 20%;
+    }
+    .main-heading {
+        font-size: 1.3rem;
+    }
+    .sub-heading {
+        width: 55%;
+        margin: auto;
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }
+    .box {
+        width: 75%;
+        padding: 1.5rem;
+    }
+    .billing .text {
+        font-size: 0.7rem;
+    }
+    .toggle {
+        width: calc(var(--toggleWidth) * .8);
+        height: calc(var(--toggleHeight) * .8);
+    }
+    .round::before {
+        width: calc(var(--toggleWidth) *.8 /2 - 4px);      /* subtract double the top & left px */
+        height: calc(var(--toggleHeight) *.8 - 4px); 
+    }
+    .checkbox:checked + .round::before {
+        transform: translateX(calc(var(--toggleWidth) *.8 / 2));
+    }
+
+    
+
+}
 
 
 .attribution { 

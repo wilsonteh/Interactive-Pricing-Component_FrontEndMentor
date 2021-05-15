@@ -1,6 +1,6 @@
-let slider = document.getElementById('slider');
+let slider = document.querySelector('.slider');
 let pageview = document.querySelector('.pageviews span');
-let price = document.querySelector('.price span'); 
+let price = document.querySelector('.price .amount'); 
 let checkbox = document.querySelector('.checkbox');
 
 

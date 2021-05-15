@@ -191,7 +191,7 @@ body {
     border-radius: 40px;
     font-size: 0.7rem;
     margin-left: 10px;
-    padding: 0.5px 5px;
+    padding: 0 5px;
 }
 
 .discount span:nth-child(1) {
@@ -246,9 +246,37 @@ hr {
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        height: 120vh;
+    }
     .box {
         width: 70%;
         top: 70%;
+    }    
+    .info {
+        display: contents;
+    }
+    .info .pageviews {
+        text-align: center;
+        margin: 0 0 2.3rem 0;
+        font-size: 0.8rem;
+    }
+    .info .price {
+        order: 1;
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+    }
+    .billing {
+        order: 2;
+        margin: 0.7rem 0 1.5rem 0;
+    }
+    hr {
+        order: 3;
+    }
+    .description {
+        order: 4;
+        flex-direction: column;
+        align-items: center;
     }
     .discount span:nth-child(1) {
         display: block;
@@ -256,16 +284,18 @@ hr {
     .discount span:nth-child(2) {
         display: none;
     }
-    .description {
-        flex-direction: column;
-        align-items: center;
+    .description ul {
+        margin-top: .7rem;
+        list-style-position: inside;   /* align text with bullet points */ 
+    }
+    .description ul li {
+        text-align: center;
     }
     .description .btn {
         align-self: center;
         transform: translateY(30%);
         margin: 1.5rem 0 0 0;
     }
-
 }
 
 @media screen and (max-width: 576px) {
@@ -287,6 +317,9 @@ hr {
     }
     .billing .text {
         font-size: 0.7rem;
+    }
+    .description .btn {
+        margin-bottom: 1.5rem;
     }
     .toggle {
         width: calc(var(--toggleWidth) * .8);

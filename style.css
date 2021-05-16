@@ -134,6 +134,10 @@ body {
     font-size: 0.9rem;
 }
 
+.billing .text:first-child {
+    text-align: end;
+}
+
 .toggle {
     position: relative;
     display: inline-block;
@@ -284,6 +288,9 @@ hr {
     .discount span:nth-child(2) {
         display: none;
     }
+    .discount {
+        min-width: 33px;
+    }
     .description ul {
         margin-top: .7rem;
         list-style-position: inside;   /* align text with bullet points */ 
@@ -307,7 +314,7 @@ hr {
     }
     .sub-heading {
         width: 55%;
-        margin: auto;
+        margin: 0.8rem auto 0 auto;
         font-size: 0.8rem;
         line-height: 1.5rem;
     }
@@ -324,17 +331,18 @@ hr {
     .toggle {
         width: calc(var(--toggleWidth) * .8);
         height: calc(var(--toggleHeight) * .8);
+        min-width: calc(var(--toggleWidth) * .8);
+        min-height: calc(var(--toggleHeight) * .8);
     }
     .round::before {
         width: calc(var(--toggleWidth) *.8 /2 - 4px);      /* subtract double the top & left px */
         height: calc(var(--toggleHeight) *.8 - 4px); 
+        min-width: calc(var(--toggleWidth) *.8 /2 - 4px);
+        min-height: calc(var(--toggleHeight) *.8 - 4px); 
     }
     .checkbox:checked + .round::before {
         transform: translateX(calc(var(--toggleWidth) *.8 / 2));
     }
-
-    
-
 }
 
 

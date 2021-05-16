@@ -45,18 +45,18 @@ function updatePrice(step) {
         pricing = 36
     }
 
-    price.innerHTML = `${pricing}`
+    price.innerHTML = `${pricing.toFixed(2)}`
 }
 
-function discount(pricing) {
+function applyDiscount(pricing) {
     pricing *= 0.75
-    price.innerHTML = `${pricing}`
+    price.innerHTML = `${pricing.toFixed(2)}`
 }
 
 function undoDiscount(pricing) {
     console.log(pricing)
     pricing /= 0.75
-    price.innerHTML = `${pricing}`
+    price.innerHTML = `${pricing.toFixed(2)}`
 }
 
 function undoCheckbox(checkbox) {
@@ -77,13 +77,11 @@ slider.addEventListener('input', function callbackParams() {
     // and convert to percentage value 25%, 50%, etc
     let currentStep = (this.value - this.min) / (this.max - this.min) * 100
     this.style.background = `linear-gradient(to right, ${softCyan} 0%, ${softCyan} ${currentStep}%, ${lgrayBlue} ${currentStep}%, ${lgrayBlue} 100%)`
-
-
-})
+})  
 
 checkbox.addEventListener('change', function callbackParams() {
     if (this.checked) {
-        discount(getPrice())
+        applyDiscount(getPrice())
     } else if (!this.checked) {
         undoDiscount(getPrice())
     }

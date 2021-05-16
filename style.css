@@ -97,14 +97,14 @@ body {
 
 .slider {
     -webkit-appearance: none;
-    background-color: var(--lgrayBlue);
+    background: linear-gradient(to right, var(--softCyan) 0%, var(--softCyan) 50%, var(--lgrayBlue) 50%, var(--lgrayBlue) 100%);
     border-radius: 20px;
 }
 
 .slider::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
-    color: #13bba4;
+    /* background-color: red; */
     cursor: pointer;
 }
 

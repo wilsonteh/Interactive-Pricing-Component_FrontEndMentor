@@ -3,6 +3,9 @@ let pageview = document.querySelector('.pageviews span');
 let price = document.querySelector('.price .amount'); 
 let checkbox = document.querySelector('.checkbox');
 
+let softCyan = 'hsl(174, 77%, 80%)'
+let lgrayBlue = 'hsl(224, 65%, 95%)'
+
 
 // values for the slider to step on
 const stepValue = [10, 50, 100, 500, 1000]
@@ -68,6 +71,14 @@ slider.addEventListener('input', function callbackParams() {
     updatePageView(this.value)    
     updatePrice(this.value)
     undoCheckbox(slider.nextElementSibling.children[1].children[0])
+
+    // apply cyan color UP TO the thumb 
+    // find the current slider step, possible values are 0, 1, 2, 3, 4
+    // and convert to percentage value 25%, 50%, etc
+    let currentStep = (this.value - this.min) / (this.max - this.min) * 100
+    this.style.background = `linear-gradient(to right, ${softCyan} 0%, ${softCyan} ${currentStep}%, ${lgrayBlue} ${currentStep}%, ${lgrayBlue} 100%)`
+
+
 })
 
 checkbox.addEventListener('change', function callbackParams() {

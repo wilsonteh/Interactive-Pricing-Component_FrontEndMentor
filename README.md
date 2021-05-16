@@ -1,4 +1,4 @@
-# Frontend Mentor - 3-Column Preview Card Component solution
+# Frontend Mentor - Interactive Pricing Component
 
 This is a solution to the [Interactive Pricing Component](https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8). 
 Frontend Mentor challenges help you improve your coding skills by building realistic projects. 

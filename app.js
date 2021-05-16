@@ -54,7 +54,6 @@ function applyDiscount(pricing) {
 }
 
 function undoDiscount(pricing) {
-    console.log(pricing)
     pricing /= 0.75
     price.innerHTML = `${pricing.toFixed(2)}`
 }

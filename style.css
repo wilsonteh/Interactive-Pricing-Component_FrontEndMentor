@@ -48,6 +48,7 @@ body {
 .main-heading {
     color: var(--darkBlue);
     margin: 0;
+    white-space: nowrap;    /* force text to stay in one line */
 }
 
 .sub-heading {
@@ -222,7 +223,7 @@ hr {
     color: var(--grayBlue);
     font-size: 0.8rem;
     margin: 1.5rem 0 0 0;
-    
+    padding: 0 0 0 2rem;
 }
 
 .description ul li {
@@ -247,6 +248,19 @@ hr {
     color: white;
 }
 
+.attribution { 
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: 12px; 
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
 @media screen and (max-width: 992px) {
     .box {
         width: 50%;
@@ -256,6 +270,7 @@ hr {
 @media screen and (max-width: 768px) {
     body {
         height: 120vh;
+        position: relative;
     }
     .box {
         width: 70%;
@@ -271,7 +286,7 @@ hr {
     }
     .info .price {
         order: 1;
-        text-align: center;
+        justify-content: center;
         margin: 2rem 0 1rem 0;
     }
     .billing {
@@ -298,6 +313,7 @@ hr {
     .description ul {
         margin-top: .7rem;
         list-style-position: inside;   /* align text with bullet points */ 
+        padding: 0;
     }
     .description ul li {
         text-align: center;
@@ -306,6 +322,9 @@ hr {
         align-self: center;
         transform: translateY(30%);
         margin: 1.5rem 0 0 0;
+    }
+    .attribution {
+        white-space: nowrap;
     }
 }
 
@@ -317,7 +336,7 @@ hr {
         font-size: 1.3rem;
     }
     .sub-heading {
-        width: 55%;
+        width: 70%;
         margin: 0.8rem auto 0 auto;
         font-size: 0.8rem;
         line-height: 1.5rem;
@@ -350,11 +369,3 @@ hr {
 }
 
 
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%); 
-}
